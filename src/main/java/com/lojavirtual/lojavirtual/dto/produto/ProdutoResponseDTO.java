@@ -1,4 +1,4 @@
-package com.lojavirtual.lojavirtual.dto;
+package com.lojavirtual.lojavirtual.dto.produto;
 
 import java.math.BigDecimal;
 

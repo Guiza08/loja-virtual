@@ -1,4 +1,4 @@
-package com.lojavirtual.lojavirtual.dto;
+package com.lojavirtual.lojavirtual.dto.cliente;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;

@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lojavirtual.lojavirtual.dto.ClienteRequestDTO;
-import com.lojavirtual.lojavirtual.dto.ClienteResponseDTO;
+import com.lojavirtual.lojavirtual.dto.cliente.ClienteRequestDTO;
+import com.lojavirtual.lojavirtual.dto.cliente.ClienteResponseDTO;
 import com.lojavirtual.lojavirtual.entidades.Cliente;
 import com.lojavirtual.lojavirtual.servico.ClienteServico;
 

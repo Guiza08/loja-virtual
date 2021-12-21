@@ -1,4 +1,4 @@
-package com.lojavirtual.lojavirtual.dto;
+package com.lojavirtual.lojavirtual.dto.cliente;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

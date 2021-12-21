@@ -20,7 +20,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class LojaVirtualTratamentoExcecao extends ResponseEntityExceptionHandler {
 
 	private static final String CONSTANT_VALIDATION_NOT_BLANK = "NotBlank";
+	private static final String CONSTANT_VALIDATION_NOT_NULL = "NotNull";
 	private static final String CONSTANT_VALIDATION_LENGTH = "Length";
+	private static final String CONSTANT_VALIDATION_MIN = "Min";
 
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
@@ -59,10 +61,18 @@ public class LojaVirtualTratamentoExcecao extends ResponseEntityExceptionHandler
 		if (fieldError.getCode().equals(CONSTANT_VALIDATION_NOT_BLANK)) {
 			return fieldError.getDefaultMessage().concat(" é obrigatório!");
 		}
+		if (fieldError.getCode().equals(CONSTANT_VALIDATION_NOT_NULL)) {
+			return fieldError.getDefaultMessage().concat(" é obrigatório!");
+		}
 		if (fieldError.getCode().equals(CONSTANT_VALIDATION_LENGTH)) {
 			return fieldError.getDefaultMessage().concat(String.format(" deve ter entre s% e s% caracteres",
 					fieldError.getArguments()[2], fieldError.getArguments()[1]));
 		}
+		if (fieldError.getCode().equals(CONSTANT_VALIDATION_MIN)) {
+			return fieldError.getDefaultMessage().concat(String.format(" deve ser maior ou igual a %s", 
+					fieldError.getArguments()[1]));
+		}
+		
 		return fieldError.toString();
 	}
 

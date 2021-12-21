@@ -41,7 +41,19 @@ public class ProdutoServico {
 	public void deletar(Long codigo) {
 		produtoRepositorio.deleteById(codigo);
 	}
-
+	
+	protected void atualizarQuantidadeEmEstoque(Produto produto) {
+		produtoRepositorio.save(produto);
+	}
+	
+	protected Produto validarProdutoExisteC(Long codigoProduto) {
+		Optional<Produto> produto = produtoRepositorio.findById(codigoProduto);
+		if (produto.isEmpty()) {
+			throw new RegraNegocioException(String.format("Produto de código %s não encontrado", codigoProduto));
+		}
+		return produto.get();
+	}
+	
 	private Produto validarProdutoExiste(Long codigo) {
 		Optional<Produto> produto = buscarPorCodigo(codigo);
 		if (produto.isEmpty()) {
